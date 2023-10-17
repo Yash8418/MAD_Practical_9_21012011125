@@ -16,9 +16,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cardElevation="15dp">
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:src="@drawable/alarm1"
+            android:src="@drawable/animation_list"
             android:scaleType="fitXY">
 
         </ImageView>
@@ -40,6 +41,15 @@
             android:layout_marginTop="350dp"
             android:layout_marginHorizontal="10dp">
         </TextView>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="320dp"
+            android:src="@drawable/heart_animation">
+        </ImageView>
+
 
 <Button
     android:layout_width="wrap_content"
@@ -57,7 +67,7 @@
             android:textStyle="bold"
             android:layout_marginTop="440dp"
             android:layout_marginLeft="180dp"
-            android:background=""
+            android:background="@android:color/transparent"
             android:textColor="#5aa9e6">
 
         </Button>
