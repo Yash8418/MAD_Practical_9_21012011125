@@ -5,43 +5,48 @@ import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 
-class SplashActivity : AppCompatActivity(),AnimationListener {
-    lateinit var logonanimation:AnimationDrawable
-    lateinit var image3:ImageView
-    lateinit var logoanimation:Animation
+class SplashActivity : AppCompatActivity() {
+    lateinit var logoanimation: AnimationDrawable
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val image:ImageView=findViewById(R.id.image)
-        image.setBackgroundResource(R.drawable.uvpce_animation)
-        logonanimation=image.background as AnimationDrawable
-        logoanimation = AnimationUtils.loadAnimation(this , R.anim.twin_animation)
-        logoanimation.setAnimationListener(this)
+
+        val logo: ImageView = findViewById(R.id.uvpce_logo)
+
+        logo.setBackgroundResource(R.drawable.uvpce_animation)
+        logoanimation = logo.background as AnimationDrawable;
+
+        val myAnimation = AnimationUtils.loadAnimation(this, R.anim.twin_animation)
+        logo.startAnimation(myAnimation)
+
+        // Add an animation listener to your animation
+        myAnimation.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation) {
+                // Animation started
+            }
+
+            override fun onAnimationEnd(animation: Animation) {
+                // Animation ended, start a new activity here
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                startActivity(intent)
+            }
+
+            override fun onAnimationRepeat(animation: Animation) {
+                // Animation repeated
+            }
+        })
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        if(hasFocus){
-            image3.startAnimation(logoanimation)
-            logonanimation.start()
+        if (hasFocus) {
+            logoanimation.start()
+        } else {
+            logoanimation.stop()
+            }
         }
-        else{
-            logonanimation.stop()
-        }
-        super.onWindowFocusChanged(hasFocus)
-    }
-    override fun onAnimationStart(p0: Animation?) {
-
-    }
-
-    override fun onAnimationEnd(p0: Animation?) {
-        Intent(this , MainActivity::class.java).apply { startActivity(this) }
-    }
-
-    override fun onAnimationRepeat(p0: Animation?) {
-    }
 }
