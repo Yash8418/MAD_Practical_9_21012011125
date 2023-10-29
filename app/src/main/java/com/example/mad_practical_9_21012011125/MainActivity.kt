@@ -15,12 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val alarmIv:ImageView=findViewById(R.id.imageView)
+        alarmIv.setBackgroundResource(R.drawable.animation_list)
         animAlarm = alarmIv.drawable as AnimationDrawable
-        animAlarm.start()
+        //animAlarm.start()
 
         val heartIv:ImageView=findViewById(R.id.imageView2)
+        heartIv.setBackgroundResource(R.drawable.heart_animation)
         animHeart = heartIv.drawable as AnimationDrawable
-        animHeart.start()
+        //animHeart.start()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {

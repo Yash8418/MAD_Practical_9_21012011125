@@ -11,6 +11,6 @@
     <item android:drawable="@drawable/alarm7" android:duration="200"></item>
     <item android:drawable="@drawable/alarm8" android:duration="200"></item>
     <item android:drawable="@drawable/alarm9" android:duration="200"></item>
-
+    <item android:drawable="@drawable/alarm10" android:duration="200"></item>
 </animation-list>
 

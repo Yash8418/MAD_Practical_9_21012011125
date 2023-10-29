@@ -51,26 +51,27 @@
         </ImageView>
 
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="440dp"
-    android:layout_marginHorizontal="10dp"
-    android:text="Create Alarm"
-    android:textStyle="bold"
-    android:backgroundTint="#5aa9e6">
-</Button>
-        <Button
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel Alarm"
-            android:textStyle="bold"
+            android:text="Create Alarm"
             android:layout_marginTop="440dp"
-            android:layout_marginLeft="180dp"
-            android:background="@android:color/transparent"
-            android:textColor="#5aa9e6">
-
-        </Button>
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#5aa9e6"
+            app:icon="@drawable/baseline_alarm_add_24">
+        </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:text="Cancel Alarm"
+            android:layout_marginTop="440dp"
+            android:layout_marginLeft="170dp"
+            android:textColor="#5aa9e6"
+            app:icon="@drawable/baseline_alarm_off_24"
+            app:iconTint="#5aa9e6" />
     </com.google.android.material.card.MaterialCardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
